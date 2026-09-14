@@ -125,7 +125,7 @@ def main():
             evidence += f" | {c['status']}"
 
         ws.append([i, c["category"], ar, en, url or "n/a", c["handle"],
-                   followers, likes, est_age, NOT_VERIFIED_FACE, evidence])
+                   str(followers), str(likes), est_age, NOT_VERIFIED_FACE, evidence])
 
     for row in ws.iter_rows(min_row=2, max_row=ws.max_row, max_col=len(headers)):
         for cell in row:
