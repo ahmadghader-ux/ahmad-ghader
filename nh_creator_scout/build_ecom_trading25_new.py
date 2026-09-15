@@ -473,6 +473,28 @@ def main():
     ws2.column_dimensions["C"].width = 12
     ws2.column_dimensions["D"].width = 45
 
+    # ---------------- All 25 profiles, with clickable links, on the Chart tab ----------------
+    ws2.append([])
+    r = ws2.max_row + 1
+    ws2.cell(row=r, column=1, value="All 25 Profiles").font = Font(name=FONT_NAME, bold=True, size=13)
+    ws2.append([])
+    ws2.append(["#", "Name", "Niche", "Profile Link"])
+    style_header(ws2, ws2.max_row, 4)
+
+    for i, c in enumerate(CANDIDATES, 1):
+        url = account_url(c)
+        ws2.append([i, c["name"], c["category"], url or "No confirmed handle — see Creators tab"])
+        r = ws2.max_row
+        if url:
+            cell = ws2.cell(row=r, column=4)
+            cell.hyperlink = url
+            cell.style = "Hyperlink"
+
+    for row in ws2.iter_rows(min_row=ws2.max_row - len(CANDIDATES), max_row=ws2.max_row, max_col=4):
+        for cell in row:
+            cell.border = border
+            cell.alignment = Alignment(vertical="top", wrap_text=True)
+
     ws3 = wb.create_sheet("Method")
     ws3["A1"] = "Method Notes"
     ws3["A1"].font = Font(name=FONT_NAME, bold=True, size=13)
