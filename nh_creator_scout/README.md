@@ -44,3 +44,29 @@ a faithful transcript reconstruction, not a fresh research pass.
 pip install openpyxl
 python3 build_scout.py
 ```
+
+## `NH_TikTok_EcommerceTrading_Only25.xlsx`
+
+25 Saudi(-market) TikTok/social creators restricted to **E-commerce (12)**
+and **Trading (13)** only — Real Estate is dropped entirely. Reuses the 15
+E-commerce/Trading candidates from the earlier 3-niche scout
+(`build_tiktok_scout.py`) and adds 10 newly-researched candidates (7
+e-commerce, 3 trading) to reach 25.
+
+Same no-fabrication contract as the earlier scout: every candidate is a
+real, verified account with citable sources; unconfirmed nationality is
+flagged rather than assumed or silently excluded; namesake/wrong-country
+traps are called out explicitly. The workbook has three tabs — `Creators`
+(full table with clickable account links), `Chart` (text-rendered bar
+charts, niche breakdown + disclosed follower counts), and
+`Excluded & Method` (disqualified leads and sourcing caveats, including
+that this environment's network proxy blocked direct TikTok/Instagram page
+loads — data comes from search-engine snippets, not re-loaded profiles, so
+follower counts should be re-verified before outreach).
+
+Rebuild with:
+
+```
+pip install openpyxl
+python3 build_ecom_trading25.py
+```
