@@ -44,3 +44,21 @@ a faithful transcript reconstruction, not a fresh research pass.
 pip install openpyxl
 python3 build_scout.py
 ```
+
+## Saudi TikTok creator batches (trading / e-commerce / real estate)
+
+- **Batch 1** (`build_tiktok_scout.py` → `NH_TikTok_Ecommerce_Trading_RealEstate_Scout.xlsx`,
+  plus the Google-Sheets/PDF/age-format/Final25 variants): 25 candidates
+  across e-commerce, trading, and real estate.
+- **Batch 2** (`build_tiktok_scout_batch2.py` → `NH_TikTok_Scout_Batch2_EcommerceTrading.xlsx`):
+  24 NEW candidates, trading and e-commerce only, excluding every handle
+  already used in Batch 1. One short of the requested 25 — the research
+  passes declined to invent a 25th name to hit the round number; see the
+  "Method" tab for the shortfall note.
+
+Both batches were sourced the same way: no direct TikTok/X/Instagram/Snapchat
+scraping was possible (this environment's egress proxy blocks those
+domains), so every candidate was found and cross-verified via web search,
+under a no-fabrication contract — every claim needs a citable source URL,
+unknown fields are "n/a", and nationality/niche-mismatch traps are flagged
+rather than silently resolved.
